@@ -4,11 +4,13 @@
 #description            :This script randomly picks an option for you.
 #author                 :Michael Wellner (@m1well) twitter.m1well.de
 #date of creation       :20181209
-#date of last change    :20181209
-#version                :1.0.0
+#date of last change    :20190305
+#version                :1.1.0
 #usage                  :randomizer.sh
 #notes                  :it would be most suitable to create an alias
 ###
+
+set -eu
 
 ### colors and linebreak ###
 BR="\n"
@@ -42,6 +44,7 @@ isStringEqual() {
 printStartLines
 
 counter=0
+options=""
 while read line
 do
   if !(isStringEqual "$line" "") ; then
